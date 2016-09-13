@@ -124,6 +124,10 @@ Use case ends.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should have security features for [private contact details](#private-contact-detail).
+6. Should not lose contact details if the App crashes.
+7. Should take up minimal memory space.
+8. Should be able to access same AddressBook in different devices.
 
 ## Appendix D : Glossary
 
