@@ -43,10 +43,16 @@ Priority | As a ... | I want to ... | So that I can...
 -------- | :-------- | :--------- | :-----------
 `* * *` | new user | see usage instructions | refer to instructions when I forget how to use the App
 `* * *` | user | add a new person |
+`* * *` | user | edit a person's contact details | have their most updated information
 `* * *` | user | delete a person | remove entries that I no longer need
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
 `* *` | user | hide [private contact details](#private-contact-detail) by default | to minimize chance of someone else seeing them by accident
+`* *` | user | change contact details from public to private and vice versa | hide or show their details whenever I want
+`*` | user | add multiple entries of a particular detail of person e.g. hp numbers | remove the need to create a new contact entry for the same person
+`*` | user | export specific details of contacts to external folder | collect certain information whenever I need and save a backup
+`*` | user | import contact details from external file into the App | add contact details efficiently without any inconvenience
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
+`*` | user with many persons in the address book| view contacts by tags | view details of a group of contacts without having to go through the entire list
 
 
 ## Appendix B : Use Cases
