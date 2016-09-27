@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 /**
  * Represents the file used to store address book data.
  */
-public class StorageFile {
+public class StorageFile extends Storage {
 
     /** Default file path used if the user doesn't provide the file name. */
     public static final String DEFAULT_STORAGE_FILEPATH = "addressbook.txt";
@@ -48,16 +48,17 @@ public class StorageFile {
     public final Path path;
 
     /**
-     * @throws InvalidStorageFilePathException if the default path is invalid
+     * @throws IllegalValueException 
      */
-    public StorageFile() throws InvalidStorageFilePathException {
+    public StorageFile() throws IllegalValueException {
         this(DEFAULT_STORAGE_FILEPATH);
     }
 
     /**
-     * @throws InvalidStorageFilePathException if the given file path is invalid
+     * @throws IllegalValueException 
      */
-    public StorageFile(String filePath) throws InvalidStorageFilePathException {
+    public StorageFile(String filePath) throws IllegalValueException {
+    	super(filePath);
         try {
             jaxbContext = JAXBContext.newInstance(AdaptedAddressBook.class);
         } catch (JAXBException jaxbe) {
@@ -79,6 +80,7 @@ public class StorageFile {
     }
 
     /**
+     * @Override
      * Saves all data to this storage file.
      *
      * @throws StorageOperationException if there were errors converting and/or storing data to file.
@@ -104,6 +106,7 @@ public class StorageFile {
     }
 
     /**
+     * Override
      * Loads data from this storage file.
      *
      * @throws StorageOperationException if there were errors reading and/or converting data from file.
@@ -139,10 +142,6 @@ public class StorageFile {
         } catch (IllegalValueException ive) {
             throw new StorageOperationException("File contains illegal data values; data type constraints not met");
         }
-    }
-
-    public String getPath() {
-        return path.toString();
     }
 
 }
