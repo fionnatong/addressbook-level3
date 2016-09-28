@@ -55,7 +55,7 @@ public class StorageFile extends Storage {
     }
 
     /**
-     * @throws InvalidStorageFilePathException if the default path is invalid 
+     * @throws InvalidStorageFilePathException if the given file path is invalid 
      */
     public StorageFile(String filePath) throws InvalidStorageFilePathException {
         try {
@@ -144,5 +144,5 @@ public class StorageFile extends Storage {
     public String getPath() {
         return path.toString();
     }
-    
+
 }
