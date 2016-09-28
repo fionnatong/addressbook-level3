@@ -1,35 +1,13 @@
 package seedu.addressbook.storage;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import seedu.addressbook.data.AddressBook;
-import seedu.addressbook.data.exception.IllegalValueException;
 import seedu.addressbook.storage.StorageFile.StorageOperationException;
 
-public class Storage {
+public abstract class Storage {
     
-    public static final String DEFAULT_FILE_PATH = "";
+    public abstract void save(AddressBook addressBook) throws StorageOperationException;
     
-    public final Path path;
+    public abstract AddressBook load() throws StorageOperationException;
     
-    public Storage() throws IllegalValueException {
-        this(DEFAULT_FILE_PATH);
-    }
-    
-    public Storage(String filePath) throws IllegalValueException {
-        this.path = Paths.get(filePath);
-    }
-    
-    public void save(AddressBook addressBook) throws StorageOperationException {
-    	
-    }
-    
-    public AddressBook load() throws StorageOperationException {
-        return null;
-    }
-    
-    public String getPath() {
-        return path.toString();
-    }
+    public abstract String getPath();
 }

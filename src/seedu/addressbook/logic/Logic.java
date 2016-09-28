@@ -47,7 +47,7 @@ public class Logic {
      * Creates the StorageFile object based on the user specified path (if any) or the default storage path.
      * @throws IllegalValueException if the target file path is incorrect.
      */
-    private StorageFile initializeStorage() throws IllegalValueException {
+    private Storage initializeStorage() throws IllegalValueException {
         return new StorageFile();
     }
 

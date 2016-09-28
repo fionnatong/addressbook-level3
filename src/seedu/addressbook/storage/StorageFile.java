@@ -58,7 +58,6 @@ public class StorageFile extends Storage {
      * @throws IllegalValueException 
      */
     public StorageFile(String filePath) throws IllegalValueException {
-    	super(filePath);
         try {
             jaxbContext = JAXBContext.newInstance(AdaptedAddressBook.class);
         } catch (JAXBException jaxbe) {
@@ -80,7 +79,6 @@ public class StorageFile extends Storage {
     }
 
     /**
-     * @Override
      * Saves all data to this storage file.
      *
      * @throws StorageOperationException if there were errors converting and/or storing data to file.
@@ -106,7 +104,6 @@ public class StorageFile extends Storage {
     }
 
     /**
-     * Override
      * Loads data from this storage file.
      *
      * @throws StorageOperationException if there were errors reading and/or converting data from file.
@@ -144,4 +141,7 @@ public class StorageFile extends Storage {
         }
     }
 
+    public String getPath() {
+        return path.toString();
+    }
 }
