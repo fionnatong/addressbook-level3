@@ -48,16 +48,16 @@ public class StorageFile extends Storage {
     public final Path path;
 
     /**
-     * @throws IllegalValueException 
+     * @throws InvalidStorageFilePathException if the default path is invalid
      */
-    public StorageFile() throws IllegalValueException {
+    public StorageFile() throws InvalidStorageFilePathException {
         this(DEFAULT_STORAGE_FILEPATH);
     }
 
     /**
-     * @throws IllegalValueException 
+     * @throws InvalidStorageFilePathException if the default path is invalid 
      */
-    public StorageFile(String filePath) throws IllegalValueException {
+    public StorageFile(String filePath) throws InvalidStorageFilePathException {
         try {
             jaxbContext = JAXBContext.newInstance(AdaptedAddressBook.class);
         } catch (JAXBException jaxbe) {
@@ -144,4 +144,5 @@ public class StorageFile extends Storage {
     public String getPath() {
         return path.toString();
     }
+    
 }
